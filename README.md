@@ -17,6 +17,8 @@ The video playback works but is pretty janky and taxing. So video uses the depth
 For < 1080p videos the framerate is passable at best, and the pause button is broken (works, but janky). But still very cool.
 For video, the depth values are not normalized in any way, this means that the resulting mesh is pretty stable.
 
+In my experience making a full build makes the video playback a lot smoother as compared to just pressing play in the editor.
+
 ## Yes
 Single-threaded spaghetti.
 If you have no image after pressing the pause button, press the video timeline and it should maybe reappear.
