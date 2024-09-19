@@ -8,12 +8,12 @@ Using Unity Sentis and a depth_anything onnx model to create a mesh, and project
 The mesh uses the full float16 depth information, so the depth resolution has no stair-stepping as opposed to rendering it to a compressed image first.
 
 ## Photos
-Image display works pretty well, even for extreme image resolution, so that uses the vit_L model.
+Image display works pretty well, even for extreme image resolution, so that uses the depth_anything-v2_vit_L model.
 Te full resolution image is projected onto the lower resolution mesh, so higher resolution images look way better than video.
 For a 40MP image, on a RTX3090, generating the mesh and material takes about 0.5 seconds, so I guess this might also work on lower end computers.
 
 ## Video
-The video playback works but is pretty janky and taxing. So video uses the vid_B model.
+The video playback works but is pretty janky and taxing. So video uses the depth_anything-v2_vid_B model.
 For < 1080p videos the framerate is passable at best, and the pause button is broken (works, but janky). But still very cool.
 For video, the depth values are not normalized in any way, this means that the resulting mesh is pretty stable.
 
