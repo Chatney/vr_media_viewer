@@ -20,8 +20,9 @@ For video, the depth values are not normalized in any way, this means that the r
 In my experience making a full build makes the video playback a lot smoother as compared to just pressing play in the editor.
 
 ## Yes
-Single-threaded spaghetti.
-If you have no image after pressing the pause button, press the video timeline and it should maybe reappear.
+-Single-threaded spaghetti.
+-If you have no image after pressing the pause button, press the video timeline and it should maybe reappear.
+-If you lost the file browser, look up. You most likely scrolled very far and it somehow doesn't reset the scroll position when loading a new folder.
 
 ## Credits
 
