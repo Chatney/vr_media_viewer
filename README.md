@@ -1,32 +1,32 @@
 ## VR media viewer
-I wanted to have a VR image viewer to browse old photos and relive them vividly.
+I wanted to have a VR image viewer to browse old photos and relive them vividly.<br/>
 
-So this is an attempt at making a 3d VR viewer for image and video files that does not require any preprocessing.
-You can manipulate the image to be really IN it, and browse to the next by using your VR controlers.
+So this is an attempt at making a 3d VR viewer for image and video files that does not require any preprocessing.<br/>
+You can manipulate the image to be really IN it, and browse to the next by using your VR controlers.<br/>
 
-Using Unity Sentis and a depth_anything onnx model to create a mesh, and projecting the image frame.
-The mesh uses the full float16 depth information, so the depth resolution has no stair-stepping as opposed to rendering it to a compressed image first.
+Using Unity Sentis and a depth_anything onnx model to create a mesh, and projecting the image frame.<br/>
+The mesh uses the full float16 depth information, so the depth resolution has no stair-stepping as opposed to rendering it to a compressed image first.<br/>
 
 ## Photos
-Image display works pretty well, even for extreme image resolution, so that uses the depth_anything-v2_vit_L model.
-Te full resolution image is projected onto the lower resolution mesh, so higher resolution images look way better than video.
-For a 40MP image, on a RTX3090, generating the mesh and material takes about 0.5 seconds, so I guess this might also work on lower end computers.
+Image display works pretty well, even for extreme image resolution, so that uses the depth_anything-v2_vit_L model.<br/>
+Te full resolution image is projected onto the lower resolution mesh, so higher resolution images look way better than video.<br/>
+For a 40MP image, on a RTX3090, generating the mesh and material takes about 0.5 seconds, so I guess this might also work on lower end computers.<br/>
 
 ## Video
-The video playback works but is pretty janky and taxing. So video uses the depth_anything-v2_vid_B model.
-For < 1080p videos the framerate is passable at best, and the pause button is broken (works, but janky). But still very cool.
-For video, the depth values are not normalized in any way, this means that the resulting mesh is pretty stable.
+The video playback works but is pretty janky and taxing. So video uses the depth_anything-v2_vid_B model.<br/>
+For < 1080p videos the framerate is passable at best, and the pause button is broken (works, but janky). But still very cool.<br/>
+For video, the depth values are not normalized in any way, this means that the resulting mesh is pretty stable.<br/>
 
-In my experience making a full build makes the video playback a lot smoother as compared to just pressing play in the editor.
+In my experience making a full build makes the video playback a lot smoother as compared to just pressing play in the editor.<br/>
 
 ## Yes
--Single-threaded spaghetti.
--If you have no image after pressing the pause button, press the video timeline and it should maybe reappear.
--If you lost the file browser, look up. You most likely scrolled very far and it somehow doesn't reset the scroll position when loading a new folder.
+-Single-threaded spaghetti.<br/>
+-If you have no image after pressing the pause button, press the video timeline and it should maybe reappear.<br/>
+-If you lost the file browser, look up. You most likely scrolled very far and it somehow doesn't reset the scroll position when loading a new folder.<br/>
 
 ## Credits
 
-the onnx models were downloaded from https://github.com/fabio-sim/Depth-Anything-ONNX/releases.
+the onnx models were downloaded from https://github.com/fabio-sim/Depth-Anything-ONNX/releases.<br/>
 
 ```bibtex
 @article{yang2024depth,
