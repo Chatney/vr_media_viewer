@@ -1,0 +1,163 @@
+{
+    "name": "VRControls",
+    "maps": [
+        {
+            "name": "Slideshow Controls",
+            "id": "50bfdda2-d624-44db-96db-f28d194cf047",
+            "actions": [
+                {
+                    "name": "ThumbstickMove _right",
+                    "type": "Value",
+                    "id": "d83ec402-a674-4e9d-8fea-e6d66e291adc",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ThumbstickMove_left",
+                    "type": "Value",
+                    "id": "99e0b106-c69e-409d-aea7-743c20b3fa65",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "SwitchModel",
+                    "type": "Button",
+                    "id": "7bb9ad19-733c-4d67-b201-cf492196c1bd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Browser_back",
+                    "type": "Button",
+                    "id": "50eb5a24-7f8e-4e1c-9e91-fd7932f8307a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Video_PlayPause",
+                    "type": "Button",
+                    "id": "55c8c786-b0f8-40b3-bbe5-b62312d9f292",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Video_SkipForward",
+                    "type": "Button",
+                    "id": "42cb9a6c-4771-42c5-8f9d-3740eaa706ee",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Video_SkipBackward",
+                    "type": "Button",
+                    "id": "c097f78e-42a2-41db-b738-6e9afb77a96d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "e694778c-e5a8-42b0-935a-e979a03039ac",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9a0e1e92-5b1e-43e4-b152-545118a47df6",
+                    "path": "<OculusTouchController>{RightHand}/thumbstick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThumbstickMove _right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1eb862af-85fa-476f-bebf-6436f40b2e5b",
+                    "path": "<OculusTouchController>{LeftHand}/thumbstick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThumbstickMove_left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d745be30-0eb0-4137-9808-3fe05bb8d85f",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Browser_back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8b4ef860-c546-451b-8e50-ed1852f556d5",
+                    "path": "<XRController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Video_PlayPause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6012a85f-c445-40d7-aabf-bcacaa33e8ac",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Video_SkipForward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "be731e35-ea18-40fa-a170-34070b2fad75",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Video_SkipBackward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "18011f12-15c0-40af-aeca-29cd763efefd",
+                    "path": "<XRController>{LeftHand}/menuButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
