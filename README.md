@@ -11,6 +11,8 @@ The mesh uses the full float16 depth information, so the depth resolution has no
 Image display works pretty well, even for extreme image resolution, so that uses the depth_anything-v2_vit_L model.<br/>
 The full resolution image is projected onto the lower resolution mesh, so higher resolution images look way better than video.<br/>
 For a 40MP image, on a RTX3090, generating the mesh and material takes about 0.5 seconds, so I guess this might also work on lower end computers.<br/>
+![chalet](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2p4cjcyNnc4cnR1NmJtYnkybG82aWtmaHl4bXJyaXkwNXN3MW8xcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1Rp4q6d7t97r17hNX5/giphy.gif)
+
 
 ## Video
 The video playback works but is pretty janky and taxing. So video uses the depth_anything-v2_vid_B model.<br/>
