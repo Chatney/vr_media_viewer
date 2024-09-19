@@ -2,7 +2,7 @@
 I wanted to have a VR image viewer to browse old photos and relive them vividly.<br/>
 
 So this is an attempt at making a 3d VR viewer for image and video files that does not require any preprocessing.<br/>
-You can manipulate the image to be really IN it, and browse to the next by using your VR controlers.<br/>
+You can manipulate the image to be really IN it, and browse to the next by using your VR controllers.<br/>
 
 Using Unity Sentis and a depth_anything onnx model to create a mesh, and projecting the image frame.<br/>
 The mesh uses the full float16 depth information, so the depth resolution has no stair-stepping as opposed to rendering it to a compressed image first.<br/>
