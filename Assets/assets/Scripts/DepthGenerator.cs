@@ -25,8 +25,8 @@ public class DepthGenerator : MonoBehaviour
     RenderTexture depthRenderTexturePrev;
     RenderTexture depthRenderTexture;
 
-    public float historicalMinimum;
-    public float historicalMaximum;
+    //public float historicalMinimum;
+    //public float historicalMaximum;
     public float minDepthValueDefault = 0f;
     public float maxDepthValueDefault = 1f;
 
@@ -42,10 +42,11 @@ public class DepthGenerator : MonoBehaviour
         worker = WorkerFactory.CreateWorker(BackendType.GPUCompute, runtimemodel);
     }
 
-    public void ResetNormalisation(){ //gets called whenever a new image or video is to be displayed. an image gets normalized to 0-1. video frame as well, but the scope will be updated every frame (and never gets smaller to avoid flickering)
-        historicalMinimum = minDepthValueDefault;
-        historicalMaximum = maxDepthValueDefault;
-    }
+
+//    public void ResetNormalisation(){ //gets called whenever a new image or video is to be displayed. an image gets normalized to 0-1. video frame as well, but the scope will be updated every frame (and never gets smaller to avoid flickering)
+//        historicalMinimum = minDepthValueDefault;
+//        historicalMaximum = maxDepthValueDefault;
+//    }
 
     public (float[] depthvalues, float[] depthValuesNormalized, int width, int height) GetDepth(RenderTexture input, bool normalize){
         //run depth_anything
@@ -77,22 +78,7 @@ public class DepthGenerator : MonoBehaviour
             //apply useful ranges to the arrays
             for (int i = 0; i < depthArray.Length; i++) {
 
-                //update the normalisation scope. Will be reset each new video / image
-                //doesn't work
-                if(currentMinimum < historicalMinimum){
-                    historicalMinimum = currentMinimum;
-                }
-                if(currentMaximum < historicalMaximum){
-                    historicalMaximum = currentMaximum;
-                }
-
-                //normalize
-                //depthValues[i] = (depthArray[i] - historicalMinimum) / (historicalMaximum - historicalMinimum);
                 depthValuesNormalized[i] = (depthArray[i] - currentMinimum) / (currentMaximum - currentMinimum);
-
-                //depthValues[i] = depthArray[i] / max; //normalize but don't set minvalue to 0
-                // depthValues[i] = 1 - depthValues[i]; //invert depth
-
                 
                 if(normalize){
                     depthValues[i] = depthValuesNormalized[i];
