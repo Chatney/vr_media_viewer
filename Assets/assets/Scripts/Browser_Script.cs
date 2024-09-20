@@ -390,7 +390,7 @@ public void OnFolderClick(string path)
         StopVideo(); //stop video player if still playing
 
         DepthGenerator depthGenerator = UnityEngine.Object.FindAnyObjectByType<DepthGenerator>();
-        depthGenerator.ResetNormalisation();
+        //depthGenerator.ResetNormalisation();
 
         try
         {

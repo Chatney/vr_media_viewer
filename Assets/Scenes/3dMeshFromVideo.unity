@@ -151,10 +151,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   depthModelDetailed: {fileID: 5022602860645237092, guid: ead8ea8f227f7b24b9440489cf93ef4e, type: 3}
   depthModelFast: {fileID: 5022602860645237092, guid: 4da8c0a4e20634f4bb3a0f334e6f1ddb, type: 3}
-  historicalMinimum: 0
-  historicalMaximum: 0
-  minDepthValueDefault: 0
-  maxDepthValueDefault: 1
 --- !u!4 &69218946
 Transform:
   m_ObjectHideFlags: 0

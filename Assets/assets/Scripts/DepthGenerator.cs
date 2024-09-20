@@ -25,10 +25,10 @@ public class DepthGenerator : MonoBehaviour
     RenderTexture depthRenderTexturePrev;
     RenderTexture depthRenderTexture;
 
-    public float historicalMinimum;
-    public float historicalMaximum;
-    public float minDepthValueDefault = 0f;
-    public float maxDepthValueDefault = 1f;
+    // public float historicalMinimum;
+    // public float historicalMaximum;
+    // public float minDepthValueDefault = 0f;
+    //  float maxDepthValueDefault = 1f;
 
     void Start()
     {
@@ -43,8 +43,8 @@ public class DepthGenerator : MonoBehaviour
     }
 
     public void ResetNormalisation(){ //gets called whenever a new image or video is to be displayed. an image gets normalized to 0-1. video frame as well, but the scope will be updated every frame (and never gets smaller to avoid flickering)
-        historicalMinimum = minDepthValueDefault;
-        historicalMaximum = maxDepthValueDefault;
+        //historicalMinimum = minDepthValueDefault;
+        //historicalMaximum = maxDepthValueDefault;
     }
 
     public (float[] depthvalues, float[] depthValuesNormalized, int width, int height) GetDepth(RenderTexture input, bool normalize){
@@ -79,12 +79,14 @@ public class DepthGenerator : MonoBehaviour
 
                 //update the normalisation scope. Will be reset each new video / image
                 //doesn't work
+                /*
                 if(currentMinimum < historicalMinimum){
                     historicalMinimum = currentMinimum;
                 }
                 if(currentMaximum < historicalMaximum){
                     historicalMaximum = currentMaximum;
                 }
+                */
 
                 //normalize
                 //depthValues[i] = (depthArray[i] - historicalMinimum) / (historicalMaximum - historicalMinimum);
