@@ -72,5 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # ML models
-/Assets/assets/Models.meta
-/Assets/assets/Models/*
+/Assets/assets/Models/*.onnx
