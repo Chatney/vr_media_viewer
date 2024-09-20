@@ -20,6 +20,13 @@ For video, the depth values are not normalized in any way, this means that the r
 
 In my experience making a full build makes the video playback a lot smoother as compared to just pressing play in the editor.<br/>
 
+## Models
+Unity Sentis uses onnx files. I use vitb_dynamic and vitl_dynamic, available [here](https://github.com/fabio-sim/Depth-Anything-ONNX/releases)<br/>
+There are also depth_anything-v2 onnx models on huggingface [here](https://huggingface.co/onnx-community/depth-anything-v2-large/tree/main/onnx) and [here](https://huggingface.co/onnx-community/depth-anything-v2-base/tree/main/onnx), that work with varying success.<br/>
+put them in a models folder, and plonk them in the inspector like so<br/>
+<img src="./Assets/img/models_go_there.png"/><br/>
+The fast model is used for video and is not normalized. To keep the mesh at an acceptable distance the model output is divided by a fixed value. This works for the vits and vitb model. Vitl seems to output different values, so if you want to use the large model for video, you will have to enable normalizing for video or fiddle with the value.
+
 ## Yes
 -Single-threaded spaghetti.<br/>
 -If you have no image after pressing the pause button, press the video timeline and it should maybe reappear.<br/>
