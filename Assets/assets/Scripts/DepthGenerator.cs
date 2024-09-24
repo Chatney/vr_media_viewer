@@ -16,7 +16,7 @@ public class DepthGenerator : MonoBehaviour
     Model runtimemodelFast;
 
     bool fastWorker;
-    public IWorker worker;
+    public Worker worker;
     Texture2D depthTexture;
 
     float[] DepthValuesPrev;
@@ -39,7 +39,7 @@ public class DepthGenerator : MonoBehaviour
         //fastWorker = false;
 
         //create default worker
-        worker = WorkerFactory.CreateWorker(BackendType.GPUCompute, runtimemodel);
+        worker = new Worker(runtimemodel,BackendType.GPUCompute);
     }
 
     public void ResetNormalisation(){ //gets called whenever a new image or video is to be displayed. an image gets normalized to 0-1. video frame as well, but the scope will be updated every frame (and never gets smaller to avoid flickering)
@@ -54,12 +54,12 @@ public class DepthGenerator : MonoBehaviour
         try
         {
             //use the model
-            worker.Execute(inTensor);    
+            worker.Schedule(inTensor);    
 
             //get output   
-            var outTensor = worker.PeekOutput() as TensorFloat;
-            outTensor.CompleteOperationsAndDownload();
-            float[] depthArray = outTensor.ToReadOnlyArray();
+            var outTensor = worker.PeekOutput() as Tensor<float>;
+            outTensor.ReadbackAndClone();
+            float[] depthArray = outTensor.DownloadToArray();
 
             //cleanup Memory
             inTensor.Dispose();

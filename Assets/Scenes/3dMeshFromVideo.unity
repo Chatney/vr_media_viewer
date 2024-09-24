@@ -282,7 +282,7 @@ MonoBehaviour:
   NonLinearityCompensationFactor: 1
   stabilizationThreshold: 1
   resizeShader: {fileID: 4800000, guid: 558b76404049e1546b0c855d79906cd0, type: 3}
-  splashImage: {fileID: 2800000, guid: 2077c29ceaaf76a409ad33e536024d4e, type: 3}
+  splashImage: {fileID: 2800000, guid: fbd1eecfa83a7954c925f3908361f30e, type: 3}
   depth_multiplier: 450
   projectionfactor: 1.5
   expectedImageSize: 518
